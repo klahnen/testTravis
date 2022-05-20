@@ -6,5 +6,5 @@ go:
 - 1.11.x
 - master
 
-env:
-  - DOCKER_USER=klahnen DOCKER_PASSWORD=my_fake_password
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
